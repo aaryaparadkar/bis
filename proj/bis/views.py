@@ -15,4 +15,4 @@ def index(request):
         contact.save()
         return HttpResponse("<h3>Thank you!</h3>")
 
-    return render(request, '../templates/index.html')
+    return render(request, 'bis/index.html')
