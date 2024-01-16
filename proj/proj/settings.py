@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'proj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'a2A-dab61G*abEcdcc5Cfg3Eca-1-D1D',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': '59335',
     }
 }
 
