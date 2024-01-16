@@ -8,6 +8,17 @@ function getYear() {
 getYear();
 
 
+function checkInputValue(input) {
+    const inputValue = input.value.trim();
+    const spanLabel = input.nextElementSibling; // Assuming span follows the input
+
+    if (inputValue !== '') {
+        spanLabel.classList.add('has-value');
+    } else {
+        spanLabel.classList.remove('has-value');
+    }
+}
+
 // client section owl carousel
 $(".client_owl-carousel").owlCarousel({
     loop: true,
