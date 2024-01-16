@@ -7,5 +7,6 @@ from bis.views import index
 
 app_name = 'bis'
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', index, name='index')
 ]
