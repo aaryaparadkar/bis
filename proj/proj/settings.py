@@ -32,10 +32,10 @@ ALLOWED_HOSTS = ['.vercel.app']
 # Application definition
 
 INSTALLED_APPS = [
-    'bis',
     'material',
     'material.admin',
     'django.contrib.auth',
+    'bis',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
