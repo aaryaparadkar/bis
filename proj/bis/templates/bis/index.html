@@ -584,26 +584,22 @@
             </div>
             <div class="contact-form">
                 <!--  -->
-                <form class="form-contact" onsubmit="sendEmail(); reset(); return false;">
+                <form class="form-contact" method="POST">
+                  {% csrf_token %}
                     <h2>Send Messages</h2>
                     <div class="cont-input-box">
-                        <input type="text" class="item" id="Name" oninput="checkInputValue(this)">
-                        <span class="floating-label">Full name</span>
+                        <input name='name' type="text" class="item" id="Name" oninput="checkInputValue(this)">
+                        <span class="floating-label">Name</span>
                         <div class="error-txt">Full name can't be blank</div>
                     </div>
                     <div class="cont-input-box">
-                        <input type="email" class="item" id="Email" oninput="checkInputValue(this)">
+                        <input name='email' type="email" class="item" id="Email" oninput="checkInputValue(this)">
                         <span class="floating-label">Email</span>
                         <div class="error-txt">Email can't be blank</div>
                     </div>
                     <div class="cont-input-box">
-                        <input type="text" class="item" id="Contact" oninput="checkInputValue(this)">
-                        <span class="floating-label">Contact</span>
-                        <div class="error-txt">Contact can't be blank</div>
-                    </div>
-                    <div class="cont-input-box">
-                        <textarea class="item" id="problem"></textarea>
-                        <span>Enter your problems here</span>
+                        <textarea name='subject' class="item" id="problem"></textarea>
+                        <span>Subject</span>
                         <div class="error-txt">Message can't be blank</div>
                     </div>
                     <div class="cont-input-box">
