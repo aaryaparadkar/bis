@@ -8,7 +8,7 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('bis.urls')),
-    path('gem/', include('gem.urls')),
+    # path('gem/', include('gem.urls')),
 ]
 
 # Serve media files during development
