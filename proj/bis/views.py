@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 def index(request):
@@ -18,7 +19,11 @@ def index(request):
     return render(request, 'bis/index.html')
 
 def history(request):
-    history_content = History.objects.first()
+    try:
+        history_content = History.objects.latest('id')
+    except ObjectDoesNotExist:
+        history_content = None
+    
     return render(request, 'bis/index.html', {'history_content': history_content})
 
 def contactus(request):

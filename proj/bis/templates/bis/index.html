@@ -306,8 +306,12 @@
         </div>
         <div class="col-md-6">
           <div class="detail-box">
-            <h3>{{ history_content.title }}</h3>
-            <p>{{ history_content.content }}</p>
+            {% if history_content %}
+              <h3>{{ history_content.title }}</h3>
+              <p>{{ history_content.content }}</p>
+            {% else %}
+              <h3>Lorem Ipsum</h3>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -416,7 +420,7 @@
                     </div>
                     <div class="text">
                         <h3>Address</h3>
-                        <p>{{ contact_info_list.address }}/p>
+                        <p>{{ contact_info_list.address }}</p>
                     </div>
                 </div>
                 <div class="box">
