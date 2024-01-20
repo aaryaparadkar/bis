@@ -13,3 +13,10 @@ class History(models.Model):
     content = models.TextField()
     def __str__(self):
         return self.title
+    
+class ContactUs(models.Model):
+    tagline = models.CharField(max_length = 50)
+    address = models.CharField(max_length = 100)
+    number = models.CharField(max_length = 50)
+    def __str__(self):
+        return self.tagline

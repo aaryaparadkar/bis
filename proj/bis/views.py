@@ -20,3 +20,7 @@ def index(request):
 def history(request):
     history_content = History.objects.first()
     return render(request, 'bis/index.html', {'history_content': history_content})
+
+def contactus(request):
+    contact_info_list = ContactUs.objects.all()
+    return render(request, 'bis/index.html', {'contact_info_list': contact_info_list})

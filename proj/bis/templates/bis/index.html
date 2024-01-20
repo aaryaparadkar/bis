@@ -406,9 +406,7 @@
     <div class="contact">
         <div class="content">
             <h2>Contact <span>us</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur odio ipsa tempora illum natus
-                ratione nihil!
-            </p>
+            <p>{{ contact_info_list.tagline }}</p>
         </div>
         <div class="cont-container">
             <div class="contactInfo">
@@ -418,8 +416,7 @@
                     </div>
                     <div class="text">
                         <h3>Address</h3>
-                        <p>RH4 E18, Sector 06, Vashi, Navi Mumbai,<br>
-                          Maharshtra, India 400703</br></p>
+                        <p>{{ contact_info_list.address }}/p>
                     </div>
                 </div>
                 <div class="box">
@@ -428,7 +425,7 @@
                     </div>
                     <div class="text">
                         <h3>Phone</h3>
-                        <p>08850706988 | 8898288085</p>
+                        <p>{{ contact_info_list.number }}</p>
                     </div>
                 </div>
             </div>
