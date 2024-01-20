@@ -665,6 +665,9 @@ a:focus {
 }
 
 .team_section .team_container .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 35px 0 0 0;
   border-radius: 5px;
   overflow: hidden;
