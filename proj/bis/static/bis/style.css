@@ -1163,29 +1163,6 @@ a:focus {
 }
 /*# sourceMappingURL=style.css.map */
 
-.team_section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Set a specific height if needed, this ensures vertical centering */
-}
-
-.team_container {
-  width: 100%; /* Ensure the container takes the full width */
-  max-width: 1200px; /* Set a maximum width to limit the width of the cards */
-}
-
-.box {
-  text-align: center;
-  margin: 20px; /* Adjust the margin based on your design preferences */
-}
-
-.img-box img {
-  max-width: 100%; /* Ensure the images don't exceed the container width */
-  height: auto;
-}
-
-
 /*Media query section starts*/
 
 @media screen and (max-width:991px) {
