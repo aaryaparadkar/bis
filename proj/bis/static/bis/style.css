@@ -694,6 +694,8 @@ a:focus {
 }
 
 .team_section .team_container .box .detail-box {
+  align-items: center;
+  justify-content: center;
   margin: 25px 0;
 }
 
