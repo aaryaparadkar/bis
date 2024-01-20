@@ -7,3 +7,9 @@ class Contact(models.Model):
     subject = models.CharField(max_length=500)
     def __str__(self):
         return self.name
+    
+class History(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    def __str__(self):
+        return self.title
