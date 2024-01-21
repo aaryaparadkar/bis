@@ -16,7 +16,7 @@ def index(request):
         contact.save()
         return HttpResponse("<h3>Thank you!</h3>")
         
-    contact_info_list = ContactUs.objects.all()
+    contact_info_list = ContactUs.objects.latest('id')
     history_content = History.objects.latest('id')
 
     return render(request, 'bis/index.html', {'history_content': history_content, 'contact_info_list': contact_info_list})
