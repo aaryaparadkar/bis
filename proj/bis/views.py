@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
 from django.core.exceptions import ObjectDoesNotExist
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 def index(request):
@@ -15,8 +16,12 @@ def index(request):
         contact.subject = subject
         contact.save()
         return HttpResponse("<h3>Thank you!</h3>")
-        
+
     contact_info_list = ContactUs.objects.latest('id')
     history_content = History.objects.latest('id')
+    goals_list = Goals.objects.latest('id')
+    services_list = Services.objects.latest('id')
+    team_list = Team.objects.latest('id')
 
-    return render(request, 'bis/index.html', {'history_content': history_content, 'contact_info_list': contact_info_list})
+    return render(request, 'bis/index.html', {'history_content': history_content, 'contact_info_list': contact_info_list, 'goals_list': goals_list, 'services_list': services_list, 'team_list': team_list})
+
