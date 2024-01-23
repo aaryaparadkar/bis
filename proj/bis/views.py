@@ -22,6 +22,7 @@ def index(request):
     goals_list = Goals.objects.latest('id')
     services_list = Services.objects.latest('id')
     team_list = Team.objects.latest('id')
+    carousel_list = Carousel.objects.latest('id')
 
-    return render(request, 'bis/index.html', {'history_content': history_content, 'contact_info_list': contact_info_list, 'goals_list': goals_list, 'services_list': services_list, 'team_list': team_list})
+    return render(request, 'bis/index.html', {'history_content': history_content, 'contact_info_list': contact_info_list, 'goals_list': goals_list, 'services_list': services_list, 'team_list': team_list, 'carousel_list': carousel_list})
 
