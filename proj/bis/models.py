@@ -57,7 +57,9 @@ class Team(models.Model):
 
 class Carousel(models.Model):
     title = models.CharField(max_length = 20)
-    compname = models.CharField(max_length = 20)
-    compcontent = models.CharField(max_length = 40)
+    compname1 = models.CharField(max_length = 20)
+    compcontent1 = models.CharField(max_length = 40)
+    compname2 = models.CharField(max_length = 20)
+    compcontent2 = models.CharField(max_length = 40)
     def __str__(self):
         return self.title
