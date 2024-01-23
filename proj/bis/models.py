@@ -54,3 +54,10 @@ class Team(models.Model):
     designation3 = models.CharField(max_length = 20)
     def __str__(self):
         return self.title
+
+class Carousel(models.Model):
+    title = models.CharField(max_length = 20)
+    compname = models.CharField(max_length = 20)
+    compcontent = models.CharField(max_length = 40)
+    def __str__(self):
+        return self.title
