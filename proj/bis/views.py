@@ -16,7 +16,8 @@ def index(request):
         contact.subject = subject
         contact.save()
         return HttpResponse("<h3>Thank you!</h3>")
-
+    
+    
     contact_info_list = ContactUs.objects.latest('id')
     history_content = History.objects.latest('id')
     goals_list = Goals.objects.latest('id')

@@ -129,7 +129,7 @@
                     <h1>{{ carousel_list.compname2 }}</h1>
                     <p style="font-weight: bold; font-size: 16px;">{{ carousel_list.compcontent2 }}</p>
                     <div class="btn-box">
-                      <a href="/gem" class="btn1" style="border-radius: 20px;">
+                      <a href="https://bis2.vercel.app/" class="btn1" style="border-radius: 20px;">
                         Read More
                       </a>
                     </div>
@@ -157,29 +157,52 @@
 
   <!-- service section -->
 
-  <section class="why_section layout_padding" id="services">
-    <div class="container">
+  <section class="service_section layout_padding">
+    <div class="service_container">
+      <div class="container ">
         <div class="heading_container heading_center">
-            <h2>
-                Our <span>Services</span>
-            </h2>
+          <h2>
+            Our <span>Mission</span>
+          </h2>
         </div>
-        <div class="why_container">
-            {% for service in services_list %}
-            <div class="box">
-                <div class="img-box">
-                    <!-- You can use the 'service' object to access individual fields -->
-                    <img src="{% static 'bis/images/' ~ service.title ~ '.png' %}" alt="">
-                </div>
-                <div class="detail-box">
-                    <h5>{{ service.heading }}</h5>
-                    <p>{{ service.content }}</p>
-                </div>
+        <div class="row">
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="images/s1.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>{{ goals_list.heading1 }}</h5>
+                <p>{{ goals_list.body1 }}</p>
+              </div>
             </div>
-            {% endfor %}
+          </div>
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="images/s2.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>{{ goals_list.heading2 }}</h5>
+                <p>{{ goals_list.body2 }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="images/s3.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>{{ goals_list.heading3 }}</h5>
+                <p>{{ goals_list.body3 }}</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
 
   <!-- end service section -->
@@ -266,52 +289,27 @@
 
   <section class="why_section layout_padding" id="services">
     <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Our <span>Services</span>
-        </h2>
-      </div>
-      <div class="why_container">
-        <div class="box">
-          <div class="img-box">
-            <img src="{% static 'bis/images/w1.png' %}" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>{{ services_list.heading1 }}</h5>
-            <p>{{ services_list.content1 }}</p>
-          </div>
+        <div class="heading_container heading_center">
+            <h2>
+                Our <span>Services</span>
+            </h2>
         </div>
-        <div class="box">
-          <div class="img-box">
-            <img src="{% static 'bis/images/w2.png' %}" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>{{ services_list.heading2 }}</h5>
-            <p>{{ services_list.content2 }}</p>
-          </div>
+        <div class="why_container">
+            {% for service in services_list %}
+            <div class="box">
+                <div class="img-box">
+                    <!-- You can use the 'service' object to access individual fields -->
+                    <img src="{% static 'bis/images/' ~ service.title ~ '.png' %}" alt="">
+                </div>
+                <div class="detail-box">
+                    <h5>{{ service.heading }}</h5>
+                    <p>{{ service.content }}</p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-        <div class="box">
-          <div class="img-box">
-            <img src="{% static 'bis/images/w3.png' %}" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>{{ services_list.heading3 }}</h5>
-            <p>{{ services_list.content3 }}</p>
-          </div>
-        </div>
-        <div class="box">
-          <div class="img-box">
-            <img src="{% static 'bis/images/w4.png' %}" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>{{ services_list.heading4 }}</h5>
-            <p>{{ services_list.content4 }}</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
-
+</section>
   <!-- end why section -->
 
 
