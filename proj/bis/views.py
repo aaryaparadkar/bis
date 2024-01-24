@@ -20,7 +20,7 @@ def index(request):
     contact_info_list = ContactUs.objects.latest('id')
     history_content = History.objects.latest('id')
     goals_list = Goals.objects.latest('id')
-    services_list = Services.objects.latest('id')
+    services_list = Services.objects.all()
     team_list = Team.objects.latest('id')
     carousel_list = Carousel.objects.latest('id')
 

@@ -32,17 +32,13 @@ class Goals(models.Model):
         return self.heading1
 
 class Services(models.Model):
-    title = models.CharField(max_length = 20)
-    heading1 = models.CharField(max_length = 15)
-    content1 = models.CharField(max_length = 30)
-    heading2 = models.CharField(max_length = 15)
-    content2 = models.CharField(max_length = 30)
-    heading3 = models.CharField(max_length = 15)
-    content3 = models.CharField(max_length = 30)
-    heading4 = models.CharField(max_length = 15)
-    content4 = models.CharField(max_length = 30)
+    title = models.CharField(max_length=20)
+    heading = models.CharField(max_length=15)
+    content = models.CharField(max_length=30)
+    # image = models.ImageField(upload_to='images/')
     def __str__(self):
         return self.title
+
     
 class Team(models.Model):
     title = models.CharField(max_length = 20)
