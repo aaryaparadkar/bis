@@ -169,7 +169,7 @@
           <div class="col-md-4 ">
             <div class="box ">
               <div class="img-box">
-                <img src="images/s1.png" alt="">
+                <img src="{% static 'nis/images/s1.png' %}" alt="">
               </div>
               <div class="detail-box">
                 <h5>{{ goals_list.heading1 }}</h5>
@@ -180,7 +180,7 @@
           <div class="col-md-4 ">
             <div class="box ">
               <div class="img-box">
-                <img src="images/s2.png" alt="">
+                <img src="{% static 'images/s2.png' %}" alt="">
               </div>
               <div class="detail-box">
                 <h5>{{ goals_list.heading2 }}</h5>
@@ -191,7 +191,7 @@
           <div class="col-md-4 ">
             <div class="box ">
               <div class="img-box">
-                <img src="images/s3.png" alt="">
+                <img src="{% static 'images/s3.png' %}" alt="">
               </div>
               <div class="detail-box">
                 <h5>{{ goals_list.heading3 }}</h5>
@@ -299,7 +299,7 @@
             <div class="box">
                 <div class="img-box">
                     <!-- You can use the 'service' object to access individual fields -->
-                    <img src="{% static 'bis/images/' ~ service.title ~ '.png' %}" alt="">
+                    <img src="{% static 'service.image.url' %}" alt="">
                 </div>
                 <div class="detail-box">
                     <h5>{{ service.heading }}</h5>
