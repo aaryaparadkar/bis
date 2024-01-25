@@ -35,7 +35,7 @@ class Services(models.Model):
     title = models.CharField(max_length=20)
     heading = models.CharField(max_length=15)
     content = models.CharField(max_length=30)
-    image = models.ImageField(default='static/bis/images/5856.jpg' , upload_to='images/%y')
+    image = models.ImageField(default='static/bis/images/5856.jpg' , upload_to='images/')
     def __str__(self):
         return self.title
 
