@@ -317,35 +317,42 @@
   {% comment %} internship sections {% endcomment %}
   <section class="career_section" id="career" style="background-color: white">
     <div class="career_box" style="margin-bottom: 1px;">
-      <div class="container text-center py-5">
-        <h1>Career</h1>
-        <div class="d-inline-flex align-items-center text-blue">
-  
-          <p class="m-0">We are keen that you make a soild foundation for your future by gaining critical experience on
-            cutting-edge technology projects. It's another efforts in our endeavour to be an employer of choice</p>
-  
+        <div class="container text-center py-5">
+            <h1>Career</h1>
+            <div class="d-inline-flex align-items-center text-blue">
+                <p class="m-0">We are keen that you make a solid foundation for your future by gaining critical experience on cutting-edge technology projects. It's another effort in our endeavor to be an employer of choice</p>
+            </div>
         </div>
-      </div>
     </div>
     <section>
-      <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 20px;">
-  
-        <div class="section-title justify-content-between" style="display: flex;">
-          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h5 class="fw-bold text-primary text-sm-start">TRAINING</h5>
-            <h1 class="fw-bold text-sm-start">Internship Training Program</h1>
-          </div>
-          <div>
-            <a href="#contact" class="appointment-btn scrollto"><span class="d-none d-md-inline">ENROLL FOR AN INTERNSHIP</span> </a>
-  
-          </div>
+        <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 20px;">
+            <div class="section-title justify-content-between" style="display: flex;">
+                <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+                    <h5 class="fw-bold text-primary text-sm-start">JOB OPPORTUNITIES</h5>
+                </div>
+                <div>
+                    <a href="#contact" class="appointment-btn scrollto"><span class="d-none d-md-inline">APPLY NOW</span> </a>
+                </div>
+            </div>
+            <div class="py-3 fw-light">
+                {% for career in career_list %}
+                    <h4>Position: {{ career.position }}</h4>
+                    <h4>Requirements:</h4>
+                    <ul>
+                        {% for requirement in career.requirement_set.all %}
+                            <li>{{ requirement.description }}</li>
+                        {% endfor %}
+                    </ul>
+                    <h4>How to Apply:</h4>
+                    <p>Please send your resume to <a href="mailto:info@bhumistha.com">info@bhumistha.com</a></p>
+                {% endfor %}
+            </div>
         </div>
-  
-        <h4 class="py-3 fw-light">We offer internships to our employees prior to their commencement of a career in the chemical industry.</h4>
-  
-      </div>
     </section>
-  </section>
+</section>
+
+
+
 
   <!-- client section -->
 

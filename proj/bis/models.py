@@ -59,3 +59,15 @@ class Carousel(models.Model):
     compcontent2 = models.CharField(max_length = 40)
     def __str__(self):
         return self.title
+
+class Career(models.Model):
+    title = models.CharField(max_length = 20)
+    position = models.CharField(max_length = 100)
+    def __str__(self):
+        return self.title
+    
+class Requirement(models.Model):
+    career = models.ForeignKey(Career, on_delete=models.CASCADE)
+    description = models.TextField()
+    def __str__(self):
+        return self.description

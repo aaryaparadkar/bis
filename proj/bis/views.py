@@ -24,6 +24,14 @@ def index(request):
     services_list = Services.objects.all()
     team_list = Team.objects.latest('id')
     carousel_list = Carousel.objects.latest('id')
+    career_list = Career.objects.prefetch_related('requirement_set').all()
 
-    return render(request, 'bis/index.html', {'history_content': history_content, 'contact_info_list': contact_info_list, 'goals_list': goals_list, 'services_list': services_list, 'team_list': team_list, 'carousel_list': carousel_list})
-
+    return render(request, 'bis/index.html', {
+        'history_content': history_content,
+        'contact_info_list': contact_info_list,
+        'goals_list': goals_list,
+        'services_list': services_list,
+        'team_list': team_list,
+        'carousel_list': carousel_list,
+        'career_list': career_list,
+    })
