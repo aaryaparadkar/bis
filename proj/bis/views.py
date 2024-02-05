@@ -25,6 +25,7 @@ def index(request):
     team_list = Team.objects.latest('id')
     carousel_list = Carousel.objects.latest('id')
     career_list = Career.objects.prefetch_related('requirement_set').all()
+    projects_list = Projects.objects.all()
 
     return render(request, 'bis/index.html', {
         'history_content': history_content,
@@ -34,4 +35,5 @@ def index(request):
         'team_list': team_list,
         'carousel_list': carousel_list,
         'career_list': career_list,
+        'projects_list': projects_list,
     })

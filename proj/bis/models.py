@@ -23,21 +23,13 @@ class ContactUs(models.Model):
     
 class Goals(models.Model):
     heading1 = models.CharField(max_length = 15)
-    body1 = models.CharField(max_length = 50)
+    body1 = models.CharField(max_length = 500)
     heading2 = models.CharField(max_length = 15)
-    body2 = models.CharField(max_length = 50)
-    heading3 = models.CharField(max_length = 15)
-    body3 = models.CharField(max_length = 50)
+    body2 = models.CharField(max_length = 500)
+    heading3 = models.CharField(max_length = 30)
+    body3 = models.CharField(max_length = 500)
     def __str__(self):
         return self.heading1
-
-class Services(models.Model):
-    title = models.CharField(max_length=20)
-    heading = models.CharField(max_length=15)
-    content = models.CharField(max_length=30)
-    image = models.ImageField(default='static/bis/images/5856.jpg' , upload_to='images/')
-    def __str__(self):
-        return self.title
 
     
 class Team(models.Model):
@@ -71,3 +63,27 @@ class Requirement(models.Model):
     description = models.TextField()
     def __str__(self):
         return self.description
+    
+class Projects(models.Model):
+    title = models.CharField(max_length=20)
+    image = models.ImageField(default='static/bis/images/5856.jpg' , upload_to='images/')
+    tagline = models.CharField(max_length=400)
+    description = models.CharField(max_length=400)
+    def __str__(self):
+        return self.title
+    
+class Services(models.Model):
+    title = models.CharField(max_length=20)
+    heading = models.CharField(max_length=500)
+    content = models.CharField(max_length=500)
+    additional_text = models.TextField(blank=True)  # New field for additional text
+    image = models.ImageField(default='static/bis/images/5856.jpg', upload_to='images/')
+    def __str__(self):
+        return self.title
+
+class Additional(models.Model):
+    service = models.ForeignKey(Services, on_delete=models.CASCADE, related_name='additional_entries', default='0')
+    content = models.TextField()
+    def __str__(self):
+        return self.content
+

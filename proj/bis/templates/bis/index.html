@@ -18,7 +18,16 @@
 
   <title> BIS </title>
 
+  <!-- Add this in the head section of your HTML -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
+<!-- Add this at the end of your body tag before the closing </body> -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <!-- bootstrap core css -->
 <link rel="stylesheet" type="text/css" href="{% static 'bis/bootstrap.css' %}" />
 
@@ -35,6 +44,7 @@
 <link href="{% static 'bis/style.css' %}" rel="stylesheet" />
 <!-- responsive style -->
 <link href="{% static 'bis/responsive.css' %}" rel="stylesheet" />
+{% comment %} <link href="{% static 'bis/projects.css' %}" rel="stylesheet" /> {% endcomment %}
 
 </head>
 
@@ -285,37 +295,84 @@
 
 
 
-  <!-- why section -->
-
-  <section class="why_section layout_padding" id="services">
-    <div class="container">
-        <div class="heading_container heading_center">
-            <h2>
-                Our <span>Services</span>
-            </h2>
+<!-- why section -->
+<section class="why_section layout_padding" id="services">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>Our <span>Services</span></h2>
+    </div>
+    <div class="why_container">
+      {% for service in services_list %}
+        <div class="box">
+          <div class="img-box">
+            <img src="{{ service.image.url }}" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>{{ service.heading }}</h5>
+            <p>{{ service.content }}</p>
+            {% if service.additional_entries.all %}
+              <ul>
+                {% for additional in service.additional_entries.all %}
+                  <li>{{ additional.content|linebreaksbr }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
         </div>
-        <div class="why_container">
-            {% for service in services_list %}
-            <div class="box">
-                <div class="img-box">
-                    <!-- You can use the 'service' object to access individual fields -->
-                    <img src="{{ service.image.url }}" alt="">
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+  <!-- end why section -->
+
+  <!-- project section -->
+  <section id="gallery" class="gallery">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title justify-content-between" style="display: flex;">
+            <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+                <h5 class="fw-bold text-primary text-sm-start">Projects</h5>
+                <h1 class="fw-bold text-sm-start">Our Projects</h1>
+            </div>
+            <div>
+                <a href="#appointment" class="btn btn-primary scrollto" style="background-color: #1D267D;">
+                    <span class="d-none d-md-inline">Know More</span>
+                </a>
+            </div>                
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- Add some space around the images -->
+                <div class="swiper-slide">
+                    <img src="{% static 'bis/images/project2.jpg' %}" />
                 </div>
-                <div class="detail-box">
-                    <h5>{{ service.heading }}</h5>
-                    <p>{{ service.content }}</p>
+                <div class="swiper-slide">
+                    <img src="{% static 'bis/images/project2.jpg' %}" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'bis/images/project2.jpg' %}" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'bis/images/project2.jpg' %}" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'bis/images/project2.jpg' %}" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'bis/images/project2.jpg' %}" />
                 </div>
             </div>
-            {% endfor %}
+            <div class="swiper-pagination"></div>
         </div>
     </div>
 </section>
-  <!-- end why section -->
+
 
 
 
   {% comment %} internship sections {% endcomment %}
-  <section class="career_section" id="career" style="background-color: white">
+  <section class="career_section" id="career" style="background-color: #f8f9fa; margin-top: 60px;">
     <div class="career_box" style="margin-bottom: 1px;">
         <div class="container text-center py-5">
             <h1>Career</h1>
@@ -325,8 +382,8 @@
         </div>
     </div>
     <section>
-        <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 20px;">
-            <div class="section-title justify-content-between" style="display: flex;">
+        <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 20px; background-color: #ffffff;">
+            <div class="section-title justify-content-between" style="display: flex; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                 <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
                     <h5 class="fw-bold text-primary text-sm-start">JOB OPPORTUNITIES</h5>
                 </div>
@@ -336,20 +393,24 @@
             </div>
             <div class="py-3 fw-light">
                 {% for career in career_list %}
-                    <h4>Position: {{ career.position }}</h4>
-                    <h4>Requirements:</h4>
-                    <ul>
-                        {% for requirement in career.requirement_set.all %}
-                            <li>{{ requirement.description }}</li>
-                        {% endfor %}
-                    </ul>
-                    <h4>How to Apply:</h4>
-                    <p>Please send your resume to <a href="mailto:info@bhumistha.com">info@bhumistha.com</a></p>
+                    <div style="background-color: #f8f9fa; padding: 10px; margin: 10px; border-radius: 5px;">
+                        <h4>Position: {{ career.position }}</h4>
+                        <h4>Requirements:</h4>
+                        <ul>
+                            {% for requirement in career.requirement_set.all %}
+                                <li>{{ requirement.description }}</li>
+                            {% endfor %}
+                        </ul>
+                        <h4>How to Apply:</h4>
+                        <p>Please send your resume to <a href="mailto:info@bhumistha.com">info@bhumistha.com</a></p>
+                    </div>
                 {% endfor %}
             </div>
         </div>
     </section>
 </section>
+
+
 
 
 
@@ -445,6 +506,21 @@
 <script type="text/javascript" src="{% static 'bis/custom.js' %}"></script>
 <!-- google map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      var mySwiper = new Swiper('.mySwiper', {
+          // Add your Swiper configuration options here
+          slidesPerView: 3,
+          spaceBetween: 20,
+          loop: true,
+          pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+          },
+      });
+  });
+  </script>
+  
 </body>
 
 </html>

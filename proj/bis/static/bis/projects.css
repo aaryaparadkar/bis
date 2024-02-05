@@ -1,0 +1,661 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(background.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    font-size: 1.5rem; 
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a::after {
+    width: 0%;
+    content: '';
+    height: 2px;
+    background: #fff;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links ul li a::after {
+    width: 0%;
+    content: '';
+    height: 2px;
+    background: #fff;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li a:hover::after {
+    width: 100%;
+}
+
+.text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.text-box h1{
+    font-size: 52px;
+}
+
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 18px;
+    color: bisque;
+}
+
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border: 1px solid #bbb;
+    background: #bbb;
+    transition: 1s;
+}
+
+nav .fa-bars,
+nav .fa-xmark {
+    display: none;
+}
+
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 24px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        height: 100vh;
+        width: 200px;
+        background: #bbb;
+        top: 0;
+        right: -200px;
+        text-align: center;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa-bars,
+    nav .fa-xmark {
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+}
+
+.about-us {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #f0f0f0; 
+    flex-direction: column;
+}
+
+.about-us h1 {
+    color: #081054;
+    font-size: 36px;
+    margin-bottom: 10px; /* Adjust space between heading and content */
+    margin-top: 20px; /* Adjust space above the heading */
+}
+
+
+.about-us-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-us img {
+    max-width: 40%; /* Adjust image width as needed */
+    border-radius: 20px; /* Optional: Add border radius to the image */
+    margin-right: 20px; /* Adjust space between image and text */
+}
+
+.about-us-content div {
+    flex: 1;
+}
+
+.about-us-content p {
+    color: #333; /* Adjust text color as needed */
+    font-size: 18px; /* Adjust font size as needed */
+    line-height: 1; /* Adjust line height as needed */
+}
+
+.about-us-content h2 {
+    color: #081054;
+    font-size: 24px;
+    margin-bottom: 10px; /* Adjust space between h2 and paragraph */
+}
+
+.vision-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.vision-headline {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #081054;
+}
+
+.vision-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 45%; /* Adjust the width as needed */
+    margin-bottom: 20px;
+    background-color: #ffffff; /* Box background color */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow */
+}
+
+.box img {
+    width: 20%;
+    height: auto;
+    border-bottom: 2px solid #e1e1e1; /* Optional: Add a border between image and text */
+}
+
+.box-text {
+    padding: 20px;
+    text-align: center;
+}
+
+.mission-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.mission-headline {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #081054;
+}
+
+.mission-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.mission {
+    width: 45%; /* Adjust the width as needed */
+    margin-bottom: 20px;
+    background-color: #081054; /* Box background color */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow */
+}
+
+.mission img {
+    width: 80%;
+    height: auto;
+    border-bottom: 2px solid #e1e1e1; /* Optional: Add a border between image and text */
+}
+
+.mission-text {
+    padding: 20px;
+    text-align: left;
+}
+
+.mission-text h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.mission-text p {
+    font-size: 16px;
+    color: #fff;
+}
+
+.objectives-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.section-headline {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #081054;
+}
+
+.objectives-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.objective {
+    width: 30%; /* Adjust the width as needed */
+    margin-bottom: 20px;
+}
+
+.objective img {
+    width: 40%;
+    height: auto;
+    border-radius: 50%; /* Make the image circular */
+    margin-bottom: 10px;
+}
+
+.objective-text {
+    text-align: left;
+}
+
+.objective-text h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.objective-text p {
+    font-size: 16px;
+    color: #555;
+}
+
+.gem-team-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #081054; /* Team section background color */
+    color: #fff; /* Text color for team section */
+}
+.gem-team-section .section-headline {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.gem-team-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    width: 200px; /* Adjust the width as needed */
+    margin-bottom: 20px;
+    background-color: #1826A9; /* Box background color */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.member-circle {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.member-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.member-info {
+    text-align: center;
+}
+
+.member-info h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.member-info p {
+    font-size: 14px;
+}
+
+.research-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.section-headline {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.research-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.research-item {
+    width: 200px; /* Adjust the width as needed */
+    margin-bottom: 20px;
+    border: 2px solid #081054; /* Blue outline color */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.research-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.research-text {
+    text-align: center;
+}
+
+.research-text h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.research-text p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.read-more-button {
+    background-color: #081054; /* Default button color */
+    color: #fff;
+    border: none;
+    padding:8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.read-more-button:hover {
+    background-color: #007BFF; /* Hover button color */
+}
+
+.innovation-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f4f4f4; /* You can change the background color as needed */
+}
+
+.section-headline {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #081054;
+}
+
+.innovation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.innovation-item {
+    width: 300px;
+    height: 500px; /* Set a fixed height for all innovation items */
+    margin: 20px;
+    background-color: #081054; /* Box background color */
+    border: 2px solid #e1e1e1; /* Box border color */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow */
+}
+
+.innovation-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #e1e1e1; /* Optional: Add a border between image and content */
+}
+
+.innovation-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.innovation-content h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f4f4f4;
+}
+
+.innovation-content p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #bbb;
+}
+
+.application-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #1826A9;
+}
+
+.application-section  .section-headline {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #fff; /* Updated color to white */
+}
+
+.application-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.application-item {
+    width: 300px;
+    margin: 20px;
+    background-color: #ffffff;
+    border: 2px solid #081054;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.application-item h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #081054;
+}
+
+.application-item p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #081054;
+}
+
+
+/* project section */
+.project-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #00204a; /* Change the background color to #00204a */
+    color: #fff; /* Change the text color to white */
+  }
+  
+  .project-section .section-headline {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #f0f0f0;
+  }
+  
+  .project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .project-item {
+    width: 200px;
+    height: 400px;
+    margin: 20px;
+    background-color: #fff; /* Change the box background color to white */
+    border: 2px solid #e1e1e1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #e1e1e1;
+  }
+  
+  .project-content {
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .project-content h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #00204a; /* Change the text color to #00204a */
+  }
+  
+  .project-content p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #141414;
+  }
+
+  /* complete project section */
+
+.contact-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.contact-section .section-headline {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #081054;
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.contact-box {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.input-box {
+    margin-bottom: 20px;
+}
+
+.input-box label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #081054;
+}
+
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-top: 8px; /* Add margin-top for spacing between fields */
+}
+
+.send-button {
+    background-color: #081054;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.send-button:hover {
+    background-color: #007BFF;
+}
