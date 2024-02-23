@@ -106,20 +106,18 @@
     <!-- end header section -->
     <!-- slider section -->
     {% block body %}
-    <section class="slider_section ">
+    <section class="slider_section">
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="container ">
+            <div class="container">
               <div class="row">
-                <div class="col-md-6 ">
+                <div class="col-md-6">
                   <div class="detail-box">
                     <h1>{{ carousel_list.compname1 }}</h1>
                     <p style="font-weight: bold; font-size: 16px;">{{ carousel_list.compcontent1 }}</p>
                     <div class="btn-box">
-                      <a href="" class="btn1" style="border-radius: 20px;">
-                        Read More
-                      </a>
+                      <a href="" class="btn1" style="border-radius: 20px;">Read More</a>
                     </div>
                   </div>
                 </div>
@@ -131,17 +129,79 @@
               </div>
             </div>
           </div>
-          <div class="carousel-item ">
-            <div class="container ">
+    
+          <div class="carousel-item">
+            <div class="container">
               <div class="row">
-                <div class="col-md-6 ">
+                <div class="col-md-6">
                   <div class="detail-box">
                     <h1>{{ carousel_list.compname2 }}</h1>
                     <p style="font-weight: bold; font-size: 16px;">{{ carousel_list.compcontent2 }}</p>
                     <div class="btn-box">
-                      <a href="https://bis2.vercel.app/" class="btn1" style="border-radius: 20px;">
-                        Read More
-                      </a>
+                      <a href="" class="btn1" style="border-radius: 20px;">Read More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{% static 'bis/images/blockchain.jpg' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>{{ carousel_list.compname3 }}</h1>
+                    <p style="font-weight: bold; font-size: 16px;">{{ carousel_list.compcontent3 }}</p>
+                    <div class="btn-box">
+                      <a href="" class="btn1" style="border-radius: 20px;">Read More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{% static 'bis/images/conn_vehicles.jpg' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>{{ carousel_list.compname4 }}</h1>
+                    <p style="font-weight: bold; font-size: 16px;">{{ carousel_list.compcontent4 }}</p>
+                    <div class="btn-box">
+                      <a href="" class="btn1" style="border-radius: 20px;">Read More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{% static 'bis/images/ai.jpg' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>{{ carousel_list.compname5 }}</h1>
+                    <p style="font-weight: bold; font-size: 16px;">{{ carousel_list.compcontent5 }}</p>
+                    <div class="btn-box">
+                      <a href="https://bis2.vercel.app/" class="btn1" style="border-radius: 20px;">Read More</a>
                     </div>
                   </div>
                 </div>
@@ -154,13 +214,17 @@
             </div>
           </div>
         </div>
+        <!-- Carousel indicators -->
         <ol class="carousel-indicators">
           <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
           <li data-target="#customCarousel1" data-slide-to="1"></li>
+          <li data-target="#customCarousel1" data-slide-to="2"></li>
+          <li data-target="#customCarousel1" data-slide-to="3"></li>
+          <li data-target="#customCarousel1" data-slide-to="4"></li>
         </ol>
       </div>
-
     </section>
+    
     <!-- end slider section -->
   </div>
 
